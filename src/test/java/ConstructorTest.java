@@ -43,7 +43,7 @@ public class ConstructorTest {
     public void moveSousAndCheckTextNameSous() {
         homePage.clickSousButton();
         String result = homePage.getNameSous();
-        Assert.assertEquals("Ошибка перехода к соусам", "Соус Spicy-X", result);
+        Assert.assertEquals("Ошибка перехода к соусам", "Соусы", result);
     }
 
     @Test
@@ -51,14 +51,14 @@ public class ConstructorTest {
         homePage.clickSousButton();
         homePage.clickBunsButton();
         String result = homePage.getNameBans();
-        Assert.assertEquals("Ошибка перехода к булкам", "Флюоресцентная булка R2-D3", result);
+        Assert.assertEquals("Ошибка перехода к булкам", "Булки", result);
     }
 
     @Test
     public void moveFillingsAndCheckTextNameFillings() {
         homePage.clickFillingsButton();
         String result = homePage.getNameFillings();
-        Assert.assertEquals("Ошибка перехода к начинкам", "Мясо бессмертных моллюсков Protostomia", result);
+        Assert.assertEquals("Ошибка перехода к начинкам", "Начинки", result);
     }
 
     @After

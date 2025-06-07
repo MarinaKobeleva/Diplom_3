@@ -26,24 +26,24 @@ public class HomePage {
     @FindBy(xpath = ".//span[(text()='Булки')]")
     private WebElement buttonBuns;
 
-    // локатор для кнопки "Флюоресцентная булка R2-D3"
-    @FindBy(xpath = ".//p[(text()='Флюоресцентная булка R2-D3')]")
+    // локатор для нажатой кнопки "Булки"
+    @FindBy(xpath = ".//div[contains(@class,'tab_tab_type_current__2BEPc')]/span[(text()='Булки')]")
     private WebElement buttonNameBuns;
 
     // локатор для кнопки "Соусы"
     @FindBy(xpath = ".//span[(text()='Соусы')]")
     private WebElement buttonSous;
 
-    // локатор для кнопки "Соус Spicy-X"
-    @FindBy(xpath = ".//p[(text()='Соус Spicy-X')]")
+    // локатор для нажатой кнопки "Соусы"
+    @FindBy(xpath = ".//div[contains(@class,'tab_tab_type_current__2BEPc')]/span[(text()='Соусы')]")
     private WebElement buttonNameSous;
 
     // локатор для кнопки "Начинки"
     @FindBy(xpath = ".//span[(text()='Начинки')]")
     private WebElement buttonFillings;
 
-    // локатор для кнопки "Мясо бессмертных моллюсков Protostomia"
-    @FindBy(xpath = ".//p[(text()='Мясо бессмертных моллюсков Protostomia')]")
+    // локатор для нажатой кнопки "Начинки"
+    @FindBy(xpath = ".//div[contains(@class,'tab_tab_type_current__2BEPc')]/span[(text()='Начинки')]")
     private WebElement buttonNameFillings;
 
     // локатор для кнопки "Личный кабинет"
@@ -88,8 +88,9 @@ public class HomePage {
         wait.until(ExpectedConditions.elementToBeClickable(buttonBuns)).click();
     }
 
-    @Step("Получить текст названия булки")
+    @Step("Получить текст - \"Булки\"")
     public String getNameBans() {
+        wait.until(ExpectedConditions.visibilityOf(buttonNameBuns));
         return wait.until(ExpectedConditions.elementToBeClickable(buttonNameBuns)).getText();
     }
 
@@ -98,18 +99,21 @@ public class HomePage {
         wait.until(ExpectedConditions.elementToBeClickable(buttonSous)).click();
     }
 
-    @Step("Получить текст названия соуса")
+    @Step("Получить текст - \"Соусы\"")
     public String getNameSous() {
+        wait.until(ExpectedConditions.visibilityOf(buttonNameSous));
         return wait.until(ExpectedConditions.elementToBeClickable(buttonNameSous)).getText();
     }
+
 
     @Step("Нажать кнопку \"Начинки\"")
     public void clickFillingsButton() {
         wait.until(ExpectedConditions.elementToBeClickable(buttonFillings)).click();
     }
 
-    @Step("Получить текст названия начинок")
+    @Step("Получить текст = \"Начинки\"")
     public String getNameFillings() {
+        wait.until(ExpectedConditions.visibilityOf(buttonNameFillings));
         return wait.until(ExpectedConditions.elementToBeClickable(buttonNameFillings)).getText();
     }
 
